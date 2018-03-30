@@ -1,0 +1,5 @@
+flask-restalchemy==0.7.1
+flask-sqlalchemy==2.3.2
+chromedriver_binary
+selenium==3.11
+pytest==3.5.0

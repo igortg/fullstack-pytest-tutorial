@@ -9,7 +9,6 @@ from toh.app import app, init_app
 def client():
     init_app(app)
     test_client = app.test_client()
-    test_client.json = lambda tc: json.load(tc.data)
     with app.app_context():
         yield test_client
 
@@ -17,7 +16,8 @@ def client():
 @pytest.fixture(scope='session')
 def db_engine(client):
     '''
-    Setup the database for a test session and drop all tables after the session ends. It is not intended to be used on
+    Setup the database for a test session and drop all tables
+    after the session ends. It is not intended to be used on
     tests functions, use `db_session` instead.
     '''
     db.create_all()
@@ -28,7 +28,8 @@ def db_engine(client):
 @pytest.yield_fixture(scope='function')
 def db_session(db_engine):
     '''
-    Creates a new database transaction for the test and roll it back whe the test is completed
+    Creates a new database transaction for the test and roll it back
+    when the test is completed
     '''
     connection = db_engine.connect()
     transaction = connection.begin()
@@ -41,5 +42,3 @@ def db_session(db_engine):
     db.session.close()
     transaction.rollback()
     connection.close()
-
-
