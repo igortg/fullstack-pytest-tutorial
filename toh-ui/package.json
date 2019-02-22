@@ -6,36 +6,38 @@
   "scripts": {
     "ng": "ng",
     "build": "ng build --prod",
-    "start": "ng serve -pc ng-proxy.conf.json",
+    "serve": "ng serve",
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
     "flask": "python ../toh-server/toh/app.py --seed-test",
-    "all": "npm-run-all -p flask start"
+    "start": "npm-run-all -p flask serve"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@angular/animations": "~5.0.0",
-    "@angular/common": "~5.0.0",
-    "@angular/compiler": "~5.0.0",
-    "@angular/compiler-cli": "~5.0.0",
-    "@angular/core": "~5.0.0",
-    "@angular/forms": "~5.0.0",
-    "@angular/http": "~5.0.0",
-    "@angular/platform-browser": "~5.0.0",
-    "@angular/platform-browser-dynamic": "~5.0.0",
-    "@angular/platform-server": "~5.0.0",
-    "@angular/router": "~5.0.0",
-    "@angular/upgrade": "~5.0.0",
-    "angular-in-memory-web-api": "~0.5.0",
+    "@angular/animations": "~7.2.6",
+    "@angular/common": "~7.2.6",
+    "@angular/compiler": "~7.2.6",
+    "@angular/compiler-cli": "~7.2.6",
+    "@angular/core": "~7.2.6",
+    "@angular/forms": "~7.2.6",
+    "@angular/http": "~7.2.6",
+    "@angular/platform-browser": "~7.2.6",
+    "@angular/platform-browser-dynamic": "~7.2.6",
+    "@angular/platform-server": "~7.2.6",
+    "@angular/router": "~7.2.6",
+    "@angular/upgrade": "~7.2.6",
     "core-js": "^2.4.1",
     "npm-run-all": "^4.1.2",
-    "rxjs": "^5.5.0",
-    "zone.js": "^0.8.4"
+    "rxjs": "^6.4.0",
+    "tslib": "^1.9.0",
+    "zone.js": "^0.8.29",
+    "rxjs-compat": "^6.0.0-rc.0"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.5",
+    "@angular-devkit/build-angular": "~0.11.0",
+    "@angular/cli": "^7.1.0",
     "@types/jasmine": "~2.8.0",
     "@types/jasminewd2": "^2.0.3",
     "@types/node": "^6.0.45",
@@ -53,7 +55,7 @@
     "protractor": "~5.1.0",
     "ts-node": "^3.3.0",
     "tslint": "^3.15.1",
-    "typescript": "2.4.2"
+    "typescript": "3.2.4"
   },
   "repository": {}
 }
